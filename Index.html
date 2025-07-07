@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+
+    <link
+      rel="stylesheet"
+      href="slicknav.css"
+    />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/SlickNav/1.0.10/jquery.slicknav.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="jquery.skitter.js"></script>
+
+
+    <!-- Replace your local Owl Carousel with CDN version -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/light-svg" />
+
+    <link rel="stylesheet" href="skitter.css" />
+
+    <link rel="stylesheet" href="style.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+
+    
+
+
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@mdi/font@7.2.96/css/materialdesignicons.min.css"
+    />
+
+
+    <link rel="stylesheet" href="css.css">
+
+
+
+    <style>
+                      /* Skills Section */
+        #skills {
+            padding: 100px 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            background: linear-gradient(90deg, var(--accent-1), var(--accent-2));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .swiper {
+            width: 100%;
+            height: 300px;
+            padding: 50px 0;
+        }
+        
+        .swiper-slide {
+            width: 200px;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+            border: 1px solid var(--card-border);
+            transition: var(--transition);
+        }
+        
+        .swiper-slide:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .swiper-slide img {
+            width: 80%;
+            height: 80%;
+            object-fit: contain;
+            /* filter: grayscale(100%); */
+            transition: var(--transition);
+        }
+        
+        .swiper-slide:hover img {
+            /* filter: grayscale(0%); */
+        }
+        
+   
+       
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            #desktop {
+                padding: 0 20px;
+            }
+            
+            .about-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .photo-frame {
+                max-width: 400px;
+                margin: 0 auto;
+            }
+            
+            .about-details {
+                grid-template-columns: 1fr;
+            }
+            
+            .detail-item {
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .swiper {
+                height: 250px;
+                padding: 30px 0;
+            }
+        }
+
+
+
+
+    </style>
+
+  </head>
+  <body>
+        <!-- Preloader - Add this first -->
+    <div class="preloader">
+        <div class="preloader-logo">TK</div>
+        <div class="preloader-text">Welcome to Tanishk's Portfolio</div>
+        <div class="preloader-bar">
+            <div class="preloader-progress"></div>
+        </div>
+    </div>
+    <div id="main">
+      <ul id="menu">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+      <ul id="desktop">
+        <div id="desk-brand">
+          <a href="" id="brand-naam">TK</a>
+        </div>
+        <div class="option">
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </div>
+      </ul>
+
+
+      
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav">
+      <button class="menu-toggle" aria-label="Toggle Menu">
+        <span class="menu-bar"></span>
+        <span class="menu-bar"></span>
+        <span class="menu-bar"></span>
+      </button>
+
+      <div class="fullscreen-menu">
+        <button class="close-menu" aria-label="Close Menu">✕</button>
+        <nav>
+          <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+      <!-- Hero Section -->
+    <section id="hero">
+      <div class="hero-slider">
+        <div class="hero-slide">
+          <img
+            src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&q=80"
+            alt="Coding workspace"
+            loading="eager"
+          />
+          <div class="hero-overlay">
+            <div class="hero-content">
+              <h1>Tanishk</h1>
+              <p>
+                I'm a <span class="typewriter"></span> specializing in Python
+                and JavaScript technologies
+              </p>
+              <a href="#about" class="btn btn-primary">Explore My Work</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+      <section id="about" class="content-section">
+        <div class="about-container">
+          <div class="about-photo">
+            <div class="photo-frame">
+              <img src="Real Pf.png" alt="Tanishk" />
+              <div class="photo-overlay"></div>
+            </div>
+          </div>
+
+          <div class="about-content">
+            <h2>About <span>Me</span></h2>
+            <h3>Full Stack Developer</h3>
+
+            <div class="about-text">
+              <p>
+                I'm Tanishk, a passionate developer specializing in Python and
+                JavaScript technologies. With 2+ years of experience, I create
+                efficient, user-friendly applications that solve real-world
+                problems.
+              </p>
+
+              <p>
+                My expertise includes building responsive web applications,
+                desktop GUIs with Python, and implementing modern front-end
+                designs with interactive elements.
+              </p>
+
+              <div class="about-details">
+                <div class="detail-item">
+                  <span class="detail-label">Name:</span>
+                  <span class="detail-value">Tanishk</span>
+                </div>
+                <div class="detail-item">
+                  <span class="detail-label">Email:</span>
+                  <span class="detail-value">dtanish2580@gmail.com</span>
+                </div>
+                <div class="detail-item">
+                  <span class="detail-label">Location:</span>
+                  <span class="detail-value">India</span>
+                </div>
+                <div class="detail-item">
+                  <span class="detail-label">Experience:</span>
+                  <span class="detail-value">2+ Years</span>
+                </div>
+              </div>
+
+              <div class="about-buttons">
+                <a href="#" class="btn-primary">Download CV</a>
+                <a href="#contact" class="btn-secondary">Contact Me</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Add this right before closing </body> tag -->
+    <section id="skills">
+      <div class="section-title">
+        <h2>My Skills</h2>
+        <p>Technologies I work with</p>
+      </div>
+
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+              alt="Python"
+              loading="lazy"
+            />
+          </div>
+          <div class="swiper-slide">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+              alt="JavaScript"
+              loading="lazy"
+            />
+          </div>
+          <div class="swiper-slide">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+              alt="Node.js"
+              loading="lazy"
+            />
+          </div>
+          <div class="swiper-slide">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+              alt="HTML5"
+              loading="lazy"
+            />
+          </div>
+          <div class="swiper-slide">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
+              alt="CSS3"
+              loading="lazy"
+            />
+          </div>
+          <div class="swiper-slide">
+            <img
+              src="customtkinter.ico"
+              alt=""
+              loading="lazy"
+            />
+          </div>
+          <div class="swiper-slide">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
+              alt="MongoDB"
+              loading="lazy"
+            />
+          </div>
+          <div class="swiper-slide">
+            <img
+              src="tk.png"
+              alt=""
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+         <section id="projects">
+        <div class="section-title">
+            <h2>My Projects</h2>
+            <p>Some of my recent work</p>
+        </div>
+        
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="sundown.png" alt="Python GUI Application" loading="lazy">
+                    <div class="project-links">
+                        <a href="https://sundown-swart.vercel.app/" class="btn btn-primary">Live Demo</a>
+                        <a href="#" class="btn btn-secondary">View Code</a>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <!-- <h3>Python GUI Application</h3> -->
+                     <h3>Interactive Web Dashboard</h3>
+                    <!-- <p>A modern desktop application built with Python and CustomTkinter</p> -->
+                    <p>A modern webdashboard website with html css and javascript</p>
+                    <div class="project-tags">
+                        <span>HTML</span>
+                        <span>Css</span>
+                        <span>JavaScript</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="netflix.png" alt="Interactive Web Dashboard" loading="lazy">
+                    <div class="project-links">
+                        <a href="https://netflix-clone.kesug.com/?i=1" class="btn btn-primary">Live Demo</a>
+                        <a href="#" class="btn btn-secondary">View Code</a>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3>Netflix Login Clone</h3>
+                    <p>Data visualization dashboard with JavaScript and Chart.js</p>
+                    <div class="project-tags">
+                        <span>JavaScript</span>
+                        <span>HTML</span>
+                        <span>CSS</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="portfolio2.png" alt="Portfolio Website" loading="lazy">
+                    <div class="project-links">
+                        <a href="https://tanishk405.github.io/Portfolio/" class="btn btn-primary">Live Demo</a>
+                        <a href="#" class="btn btn-secondary">View Code</a>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3>Portfolio Website</h3>
+                    <p>Responsive portfolio with smooth animations and transitions</p>
+                    <div class="project-tags">
+                        <span>HTML/CSS</span>
+                        <span>JavaScript</span>
+                        <span>jQuery</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+  <!-- Updated Contact Section -->
+<section id="contact" class="content-section">
+    <div class="section-title">
+        <h2>Get in Touch</h2>
+        <p>Have a project in mind or want to collaborate? Send me a message!</p>
+    </div>
+    
+    <div class="contact-container">
+        <div class="contact-cards">
+            <!-- Email Card -->
+            <div class="contact-card">
+                <div class="card-icon" style="--hover-color: #ff00ff">
+                    <i class="mdi mdi-email-outline"></i>
+                    <div class="icon-pulse"></div>
+                </div>
+                <h3>Email</h3>
+                <p>dtanish2580@gmail.com</p>
+                <a href="mailto:dtanish2580@gmail.com" class="card-link">Send Email <i class="mdi mdi-arrow-right"></i></a>
+            </div>
+            
+            <!-- Location Card -->
+            <div class="contact-card">
+                <div class="card-icon" style="--hover-color: #00ffff">
+                    <i class="mdi mdi-map-marker-outline"></i>
+                    <div class="icon-pulse"></div>
+                </div>
+                <h3>Location</h3>
+                <p>India</p>
+                <a href="#" class="card-link">View Map <i class="mdi mdi-arrow-right"></i></a>
+            </div>
+            
+            <!-- Availability Card -->
+            <div class="contact-card">
+                <div class="card-icon" style="--hover-color: #ff9900">
+                    <i class="mdi mdi-clock-outline"></i>
+                    <div class="icon-pulse"></div>
+                </div>
+                <h3>Availability</h3>
+                <p>Mon-Fri: 9AM-5PM</p>
+                <p>Weekends: Limited</p>
+                <a href="#" class="card-link">Schedule Call <i class="mdi mdi-arrow-right"></i></a>
+            </div>
+        </div>
+        
+        <form id="contact-form" class="contact-form">
+            <div class="form-group">
+                <input type="text" id="name" name="name" required>
+                <label for="name">Your Name</label>
+            </div>
+            <div class="form-group">
+                <input type="email" id="email" name="email" required>
+                <label for="email">Your Email</label>
+            </div>
+            <div class="form-group">
+                <input type="text" id="subject" name="title" required>
+                <label for="subject">Subject</label>
+            </div>
+            <div class="form-group">
+                <textarea id="message" name="message" rows="5" required></textarea>
+                <label for="message">Your Message</label>
+            </div>
+            <button type="submit" class="btn btn-primary">
+                <span>Send Message</span>
+                <div class="btn-wave"></div>
+            </button>
+            <div id="form-message"></div>
+        </form>
+    </div>
+
+      <section class="content-section" id="section3">
+        <div class="section-content">
+          <!-- <h2>Experience</h2>
+                <p>My professional journey and achievements.</p> -->
+        </div>
+      </section>
+    </div>
+
+    <!-- Shutter Footer -->
+    <footer id="shutter-footer">
+      <div class="footer-content">
+        <h1 class="big-name">Tanishk</h1>
+        <div class="footer-sections">
+          <div class="footer-section">
+            <canvas id="canvas-lower"></canvas>
+            <div id="orb-container-lower"></div>
+            <h2>About</h2>
+            <p>I'm a passionate developer creating modern web experiences.</p>
+          </div>
+          <div class="footer-section">
+            <h2>Links</h2>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Projects</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h2>Connect</h2>
+            <div class="social-links">
+              <a href="#"><i class="mdi mdi-github"></i></a>
+              <a href="#"><i class="mdi mdi-linkedin"></i></a>
+              <a href="#"><i class="mdi mdi-twitter"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 | Designed with ❤️</p>
+      </div>
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
