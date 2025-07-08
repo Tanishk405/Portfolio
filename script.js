@@ -509,6 +509,7 @@ $(document).ready(function () {
 
 
 // Wait until DOM is fully loaded
+// Wait until DOM is fully loaded
 document.addEventListener("DOMContentLoaded", function () {
   // ✅ Initialize EmailJS with your public key
   emailjs.init("_pCS0AFhxWxoB5a82"); // replace with your real public key
@@ -521,8 +522,15 @@ document.addEventListener("DOMContentLoaded", function () {
     return;
   }
 
+  // Track if form is being submitted
+  let isSubmitting = false;
+
   contactForm.addEventListener("submit", function (e) {
     e.preventDefault();
+
+    // Prevent multiple submissions
+    if (isSubmitting) return;
+    isSubmitting = true;
 
     const submitBtn = contactForm.querySelector('[type="submit"]');
     const originalText = submitBtn.textContent;
@@ -544,29 +552,41 @@ document.addEventListener("DOMContentLoaded", function () {
         contactForm
       )
       .then(function () {
-  // ✅ Show success message
-  formMessage.textContent = "✅ Message sent successfully!";
-  formMessage.className = "success";
-  formMessage.style.display = "block";
+        // ✅ Show success message
+        formMessage.textContent = "✅ Message sent successfully!";
+        formMessage.className = "success";
+        formMessage.style.display = "block";
 
-  // ⏱️ Hide message after 7 seconds (7000 milliseconds)
-  setTimeout(() => {
-    formMessage.style.opacity = "0";
-    // Optional: fully hide and reset after fade out
-    setTimeout(() => {
-      formMessage.style.display = "none";
-      formMessage.className = "";
-      formMessage.textContent = "";
-      formMessage.style.opacity = "1"; // Reset opacity for next time
-    }, 500); // fade out duration
-  }, 7000);
+        // Reset form and button
+        contactForm.reset();
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalText;
+        isSubmitting = false;
 
-  contactForm.reset();
-})
+        // ⏱️ Hide message after 7 seconds
+        setTimeout(() => {
+          formMessage.style.opacity = "0";
+          setTimeout(() => {
+            formMessage.style.display = "none";
+            formMessage.className = "";
+            formMessage.textContent = "";
+            formMessage.style.opacity = "1";
+          }, 500);
+        }, 7000);
+      })
+      .catch(function (error) {
+        // ❌ Show error message
+        formMessage.textContent = "❌ Failed to send message. Please try again.";
+        formMessage.className = "error";
+        formMessage.style.display = "block";
 
+        // Reset button
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalText;
+        isSubmitting = false;
+      });
+  });
 });
-
-})
 
 
 
